@@ -1,5 +1,5 @@
 import React from 'react'
-import { StoreContext } from '../App.js'
+import { StoreContext } from '../providers/StoreProvider'
 
 const BugsForm = () => {
   const store = React.useContext(StoreContext);

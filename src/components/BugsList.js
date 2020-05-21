@@ -1,5 +1,5 @@
 import React from 'react'
-import { StoreContext } from '../App.js'
+import { StoreContext } from '../providers/StoreProvider'
 import { useObserver } from 'mobx-react'
 
 const BugsList = () => {
