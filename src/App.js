@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocalStore } from 'mobx-react';
+import { useLocalStore, useObserver } from 'mobx-react';
 
 const StoreContext = React.createContext();
 
@@ -19,13 +19,13 @@ const StoreProvider = ({children}) => {
 const BugsList = () => {
   const store = React.useContext(StoreContext)
 
-  return (
+  return useObserver(() => (
     <ul>
       { store.bugs.map( bug => (
         <li key={bug}>{ bug }</li>
       ))}
     </ul>
-  )
+  ))
 }
 
 const BugsForm = () => {
