@@ -8,6 +8,9 @@ const StoreProvider = ({children}) => {
     bugs: ["Centipede"],
     addBug: (bug) => {
       store.bugs.push(bug)
+    },
+    get bugCount() {
+      return store.bugs.length
     }
   }))
 
