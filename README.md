@@ -1,6 +1,6 @@
 # Bug Tracker (Not those kind of bugs...)
 
-### This is a Simple MobX tutorial that displays its state management capabilities.
+### This is a simple MobX tutorial that displays its state management capabilities.
 
 >Tasks accomplished in this tutorial:
 >* Create React Components
