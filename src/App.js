@@ -19,6 +19,16 @@ const StoreProvider = ({children}) => {
   )
 }
 
+const BugsHeader = () => {
+  const store = React.useContext(StoreContext)
+  return useObserver(() => (
+    <h1>
+      {store.bugCount} { store.bugCount < 2 ? "bug" : "bugs"} currently in the list.
+    </h1>
+    )
+  )
+}
+
 const BugsList = () => {
   const store = React.useContext(StoreContext)
 
@@ -59,6 +69,7 @@ function App() {
   return (
   <StoreProvider>
     <main>
+      <BugsHeader />
       <BugsList />
       <BugsForm />
     </main>
