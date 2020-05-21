@@ -1,12 +1,24 @@
 import React from 'react'
 import { useLocalStore } from 'mobx-react';
 
-const store = useLocalStore(() => ({
-  bugs: ["Centipede"]
-}))
+const StoreContext = React.createContext();
+
+const StoreProvider = ({children}) => {
+  const store = useLocalStore(() => ({
+    bugs: ["Centipede"]
+  }))
+
+  return (
+    <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+  )
+}
 
 function App() {
-  return <main>Bugs!</main>
+  return (
+  <StoreProvider>
+    <main>Bugs!</main>
+  </StoreProvider>
+  )
 }
 
 export default App;
